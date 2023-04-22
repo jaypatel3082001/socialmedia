@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 // import {Person} from "@material-ui/icons"
 import  Topbar  from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -8,12 +8,17 @@ import "./home.css"
 import Footer from '../../components/footer/Footer';
 
 function Home() {
+  const [friendSidebaropen, setFriendSidebarOpen] = useState(false);
+  const toggleOnlineFriends = () => {
+    setFriendSidebarOpen(!friendSidebaropen);
+    console.log("Friend status", friendSidebaropen);
+  };
   return( <>
-  <Topbar />
+  <Topbar toggleOnlineFriends={toggleOnlineFriends}/>
   <div className="homeContainer">
     <Sidebar />
     <Feed />
-    <Rightbar />
+    <Rightbar friendSidebaropen={friendSidebaropen}/>
   </div>
   <Footer />
 </>
