@@ -83,3 +83,16 @@
     object-fit: cover;
     border-radius: 5px;
   }
+
+
+  @media only screen and (max-width: 679px) {
+
+  .rightbar{
+    display: none;
+    position: fixed;
+    right: 0;
+    background-color: aqua;
+    height: 100vh;
+  }
+
+  }

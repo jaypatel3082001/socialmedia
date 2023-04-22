@@ -2,11 +2,10 @@ import "./rightbar.css";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
-export default function Rightbar({ profile }) {
+export default function Rightbar({ profile, friendSidebaropen }) {
 
   const HomeRightbar = () => {
     return (
-
       <>
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
@@ -18,7 +17,7 @@ export default function Rightbar({ profile }) {
     );
   };
 
-  const ProfileRightbar = () => {
+  const ProfileRightbar = ({friendSidebaropen}) => {
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
     return (
       <>
@@ -109,7 +108,7 @@ export default function Rightbar({ profile }) {
     );
   };
   return (
-    <div className="rightbar">
+    <div className="rightbar" style={{display: friendSidebaropen ? "none" : "block"}}>
       <div className="rightbarWrapper">
         {profile ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
