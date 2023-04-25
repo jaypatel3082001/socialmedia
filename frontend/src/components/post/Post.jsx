@@ -4,7 +4,7 @@ import MoreVert from '@mui/icons-material/MoreVert';
 import { useState, useEffect } from "react";
 import axios from "axios"
 import { format } from 'timeago.js';
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 
 export default function Post({ post }) {
@@ -23,7 +23,7 @@ export default function Post({ post }) {
         .then(data => {return data})
         .catch(error => console.log(error));
       setUser(res.data);
-      
+
 
     }
     fetchUser();
@@ -41,7 +41,7 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <Link to={'profile/' + user.username}>
+            <Link to={`profile/${user.username}`}>
               <img
                 className="postProfileImg"
                 src={user.profilePicture || PF + "person/noAvatar.png"}

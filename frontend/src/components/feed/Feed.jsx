@@ -5,18 +5,34 @@ import "./feed.css";
 import axios from "axios"
 // import { Posts } from "../../dummyData";
 
-export default function Feed() {
+export default function Feed({userId}) {
+
   const [posts,setPosts] = useState([]);
-  // const [text,setText] = useState("");
+
   useEffect(()=>{
     const fetchPosts = async () => {
+      // alert(username)
 
-      const res = await axios.get("posts/timeline/63f88749e795721223406c6a");
+      const res = userId ? await axios.get(`posts/profile/${userId}`).then(data => {return data})
+      .catch(error => console.log(error)) : await axios.get("posts/timeline/63f88749e795721223406c6a").then(data => {return data})
+      .catch(error => console.log(error));
+      console.log("userid",userId)
+
+
       setPosts(res.data)
-      // console.log(res)
+    //   fetch('http://localhost:8800/api/posts', {
+    //  method: 'POST',
+    //  mode: 'cors',
+    //  headers: {
+    //    'Accept': 'application/json',
+    //    'Content-Type': 'application/json'
+    //  },
+    //  body: JSON.stringify(res.data)})
+
+
     }
     fetchPosts();
-  },[]);
+  },[userId]);
   return (
     <div className="feed">
 

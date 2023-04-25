@@ -6,14 +6,18 @@ import ChatIcon from "@mui/icons-material/Chat";
 import NotificationIcon from "@mui/icons-material/Notifications";
 import HomeIcon from "@mui/icons-material/Home";
 import Timeline from "@mui/icons-material/Timeline";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-function Topbar({toggleOnlineFriends}) {
+function Topbar({toggleOnlineFriends,toggleOtheroption}) {
   const [open, setOpen] = useState(false);
   const toggleSidebar = () => {
     setOpen(!open);
     console.log("Sidebar status", open);
   };
+  // const toggleOtheroption = () => {
+  //   setOpen(!open);
+  //   console.log("Sidebar status", open);
+  // };
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
@@ -44,7 +48,7 @@ function Topbar({toggleOnlineFriends}) {
         {open && (
           <div className="menu-sidebar">
             <ul>
-              <li>left</li>
+              <li onClick={toggleOtheroption}>left</li>
               <li onClick={toggleOnlineFriends}>Online friend</li>
             </ul>
           </div>

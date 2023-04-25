@@ -13,9 +13,9 @@ import {
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 
-export default function Sidebar() {
+export default function Sidebar(otherSidebaropen) {
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{display: otherSidebaropen ? "" : "block"}}>
       <div className="sidebarWrapper">
         <ul className="sidebarList">
           <li className="sidebarListItem">
