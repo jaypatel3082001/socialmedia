@@ -4,6 +4,7 @@
     overflow-y: scroll;
     position: sticky;
     top: 50px;
+    width: 200px;
   }
 
   ::-webkit-scrollbar {
@@ -54,6 +55,17 @@
     margin: 0;
     list-style: none;
   }
+
+  /* Responsive */
+.mobileSidebar{
+position: absolute;
+background-color: white;
+flex: 3;
+height: calc(100vh - 50px);
+overflow-y: scroll;
+top: 50px;
+}
+  /* Responsive */
 
 
   @media only screen and (max-width: 679px) {

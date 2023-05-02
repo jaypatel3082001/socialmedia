@@ -13,13 +13,14 @@ export default function Feed({userId}) {
     const fetchPosts = async () => {
       // alert(username)
 
-      const res = userId ? await axios.get(`posts/profile/${userId}`).then(data => {return data})
-      .catch(error => console.log(error)) : await axios.get("posts/timeline/63f88749e795721223406c6a").then(data => {return data})
-      .catch(error => console.log(error));
-      console.log("userid",userId)
+      const res = await axios.get(`http://localhost:8801/api/posts/profile/john`)
+      // const res = userId ? await axios.get(`posts/profile/${userId}`).then(data => {return data})
+      // .catch(error => console.log(error)) : await axios.get("posts/timeline/63f88749e795721223406c6a").then(data => {return data})
+      // .catch(error => console.log(error));
+      console.log("resss --->>",res)
 
 
-      setPosts(res.data)
+      // setPosts(res.data)
     //   fetch('http://localhost:8800/api/posts', {
     //  method: 'POST',
     //  mode: 'cors',
@@ -38,9 +39,9 @@ export default function Feed({userId}) {
 
       <div className="feedWrapper">
         <Share />
-        {posts.map((p) => (
+        {/* {posts.map((p) => (
           <Post key={p._id} post={p} />
-        ))}
+        ))} */}
       </div>
     </div>
   );

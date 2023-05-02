@@ -9,13 +9,15 @@ import Footer from '../../components/footer/Footer';
 
 function Home() {
   const [friendSidebaropen, setFriendSidebarOpen] = useState(false);
+  const [otherSidebaropen, setOtherSidebaropen] = useState(false);
 
   const toggleOnlineFriends = () => {
+    setOtherSidebaropen(true)
     setFriendSidebarOpen(!friendSidebaropen);
     console.log("Friend status", friendSidebaropen);
   };
-  const [otherSidebaropen, setOtherSidebaropen] = useState(false);
   const toggleOtheroption = () => {
+    setFriendSidebarOpen(false)
     setOtherSidebaropen(!otherSidebaropen);
     console.log("other status", otherSidebaropen);
   };
