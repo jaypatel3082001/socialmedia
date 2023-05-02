@@ -103,7 +103,7 @@ export default function Rightbar({ user, friendSidebaropen }) {
     );
   };
   return (
-    <div className="rightbar" style={{display: friendSidebaropen ? "none" : "block"}}>
+    <div className="rightbar" style={{display: friendSidebaropen && "block" }}>
       <div className="rightbarWrapper">
         {user ? <ProfileRightbar /> : <HomeRightbar />}
       </div>

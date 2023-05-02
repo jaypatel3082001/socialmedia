@@ -14,9 +14,9 @@ import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function Sidebar({otherSidebaropen}) {
-  console.log("option is",otherSidebaropen)
+
   return (
-    <div className="sidebar" >
+    <div className="sidebar" style={{display : otherSidebaropen && "block", position : otherSidebaropen && "absolute", backgroundColor:"white"}}>
       <div className="sidebarWrapper">
         <ul className="sidebarList">
           <li className="sidebarListItem">
