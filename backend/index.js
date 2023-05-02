@@ -9,6 +9,7 @@ const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
 const multer = require("multer")
 const path = require("path")
+const PORT = process.env.PORT || 8800
 
 
 dotenv.config();
@@ -66,6 +67,6 @@ app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
-app.listen(8802, () => {
+app.listen({PORT}, () => {
   console.log("Backend Server is running! hello jay");
 });
