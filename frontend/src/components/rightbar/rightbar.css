@@ -84,6 +84,23 @@
     object-fit: cover;
     border-radius: 5px;
   }
+  .RightbarFollowButton{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgb(11, 88, 155);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .RightbarFollowButton:focus{
+    outline: none;
+  }
 
 
   @media only screen and (max-width: 679px) {

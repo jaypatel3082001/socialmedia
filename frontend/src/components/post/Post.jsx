@@ -1,10 +1,11 @@
 import "./post.css";
 import MoreVert from '@mui/icons-material/MoreVert';
 // import { Users } from "../../dummyData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios"
 import { format } from 'timeago.js';
 import { Link } from 'react-router-dom';
+import { AuthContext } from "../../context/AuthContext";
 
 
 export default function Post({ post }) {
@@ -13,13 +14,17 @@ export default function Post({ post }) {
   const [user, setUser] = useState({});
   // const [posts,setPosts] = useState([]);
   const PF = process.env.REACT_APP_PUBLIC_FOLDER
+  const {user:currentUser} = useContext(AuthContext)
+  useEffect(()=>{
+    setIsLiked(post.likes.includes(currentUser._id))
+  },[currentUser._id,post.likes])
 
   useEffect(() => {
     const fetchUser = async () => {
 
       // const res = await axios.get({'users/': post.userId});
       const res = await axios
-        .get(`users/${post.userId}`)
+        .get(`/users?userId=${post.userId}`)
         .then(data => {return data})
         .catch(error => console.log(error));
       setUser(res.data);
@@ -30,7 +35,13 @@ export default function Post({ post }) {
     // alert(user.email)
   }, [post.userId]);
 
-  const likeHandler = () => {
+  const likeHandler = async() => {
+    try{
+      await axios.put("/posts/"+post._id+"/like",{userId:currentUser._id})
+
+    }catch(err){
+      console.log(err)
+    }
     setLike(isLiked ? like - 1 : like + 1)
     setIsLiked(!isLiked)
   }
@@ -44,7 +55,7 @@ export default function Post({ post }) {
             <Link to={`profile/${user.username}`}>
               <img
                 className="postProfileImg"
-                src={user.profilePicture || PF + "person/noAvatar.png"}
+                src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png"}
                 alt=""
               />
             </Link>

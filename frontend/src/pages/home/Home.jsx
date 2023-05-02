@@ -27,8 +27,9 @@ function Home() {
     <Sidebar otherSidebaropen={otherSidebaropen}/>
     <Feed />
     <Rightbar friendSidebaropen={friendSidebaropen}/>
+    <Footer />
   </div>
-  <Footer />
+
 </>
   );
 }
