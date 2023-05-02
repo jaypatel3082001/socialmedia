@@ -100,13 +100,13 @@ router.get("/timeline/:userId", async(req, res) => {
 
     // get user's all posts
 
-    router.get("/profile/:userId", async(req, res) => {
+    router.get("/profile/:username", async(req, res) => {
 
         try{
-            console.log("user data",req.params.userId)
-            const user = await User.findById({ userId: req.params.userId});
-            const posts = await Post.find({userId: user._id});
 
+            const user = await User.findOne({ username: req.params.username});
+            const posts = await Post.find({userId: user._id});
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 
 
            return res.status(200).json(posts);

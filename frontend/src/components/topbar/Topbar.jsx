@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./topbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
@@ -7,6 +7,7 @@ import NotificationIcon from "@mui/icons-material/Notifications";
 import HomeIcon from "@mui/icons-material/Home";
 import Timeline from "@mui/icons-material/Timeline";
 import { Link } from 'react-router-dom';
+import {AuthContext} from "../../context/AuthContext"
 
 function Topbar({toggleOnlineFriends,toggleOtheroption}) {
   const [open, setOpen] = useState(false);
@@ -14,6 +15,8 @@ function Topbar({toggleOnlineFriends,toggleOtheroption}) {
     setOpen(!open);
     console.log("Sidebar status", open);
   };
+  const {user} = useContext(AuthContext);
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   // const toggleOtheroption = () => {
   //   setOpen(!open);
   //   console.log("Sidebar status", open);
@@ -68,7 +71,9 @@ function Topbar({toggleOnlineFriends,toggleOtheroption}) {
           </div>
         </div>
         <div className="userpro">
-          <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
+        <Link to={`/profile/${user.username}`}>
+          <img src={user.profilePicture ? PF + user.profilePicture : PF+"person/noAvatar.png"} alt="" className="topbarImg" />
+          </Link>
         </div>
       </div>
     </div>
