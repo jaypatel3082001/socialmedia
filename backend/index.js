@@ -67,6 +67,6 @@ app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
-app.listen({PORT}, () => {
+app.listen(PORT, () => {
   console.log("Backend Server is running! hello jay");
 });
