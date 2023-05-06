@@ -21,6 +21,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
+      
         {user ? <Home /> : <Register />}
           <Home/>
         </Route>

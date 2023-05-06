@@ -28,7 +28,7 @@ function Topbar({toggleOnlineFriends,toggleOtheroption}) {
           <span className="logo">Social Site</span>
         </Link>
       </div>
-      <div className="topbarCenter">
+      <form className="topbarCenter">
         <div className="searchbar">
           <SearchIcon className="searchIcon" />
           <input
@@ -36,7 +36,7 @@ function Topbar({toggleOnlineFriends,toggleOtheroption}) {
             className="SearchInput"
           />
         </div>
-      </div>
+      </form>
 
       <div className="topbarRight" >
         <div className="topbarLink">

@@ -22,7 +22,7 @@ const connectMongo = () => {
   var conn = mongoose.connection;
   conn.on(
     "error",
-    console.error.bind(console, "MongoDB Connection Error>> : ")
+    console.error.bind( "MongoDB Connection Error>> : ")
   );
   conn.once("open", function () {
     console.log("Database connection has been established successfully.");

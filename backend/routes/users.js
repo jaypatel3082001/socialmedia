@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const router = require("express").Router();
 const bcrypt = require("bcrypt")
+var userController = require('../search/userController');
 //update user in database
 router.put("/:id", async(req, res)=>{
     if(req.body.userId == req.params.id || req.body.isAdmin){
@@ -126,5 +127,25 @@ router.put("/:id/unfollow", async(req,res)=>{
         res.status(403).json("you can't unfollow yourself")
     }
 })
+router.route('/user/findOne/:name').get(userController.findOneUserController);
+//get user using name
+// router.get("/", async (req,res)=>{
+//     const username = req.query.username
+//     try{
+//       const user  = await User.findOne({username:username})
+    //   const friends = await Promise.all(
+    //     user.followings.map(friendId=>{
+    //         return User.findById(user)
+    //     })
+    // )
+    // let userList = [];
+    // user.map(user=>{
+    //     const {_id, username, profilePicture} = user
+    //     userList.push({_id, username, profilePicture})
+    // })
+    // }catch(err){
+
+    // }
+// })
 
 module.exports = router

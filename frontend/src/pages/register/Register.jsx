@@ -21,12 +21,12 @@ export default function Register() {
         password: password.current.value,
       }
       try{
-        const res = await axios.post("./auth/register", user).then(data => {return data});
+         await axios.post("./auth/register", user).then(data => {return data});
           history.push("/login")
 
       }catch(err){
         console.log(err)
-        
+
       }
 
     }
@@ -41,11 +41,11 @@ export default function Register() {
           </span>
         </div>
         <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
-            <input placeholder="Username" required ref={username} className="loginInput" />
-            <input placeholder="Email" required ref={email} className="loginInput" type="email"/>
-            <input placeholder="Password" required ref={password} className="loginInput" type="password" minLength="6"/>
-            <input placeholder="Password Again" required ref={passwordAgain} className="loginInput" type="password" minLength="6"/>
+          <form className="loginBox" onClick={handleClick}>
+            <input placeholder="Username" ref={username} className="loginInput" />
+            <input placeholder="Email" ref={email} className="loginInput" type="email"/>
+            <input placeholder="Password" ref={password} className="loginInput" type="password" minLength="6"/>
+            <input placeholder="Password Again" ref={passwordAgain} className="loginInput" type="password" minLength="6"/>
             <button className="loginButton" type="submit">Sign Up</button>
             <button className="loginRegisterButton">
               Log into Account
