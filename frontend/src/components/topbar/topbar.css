@@ -1,7 +1,7 @@
 .topbarContainer {
   height: 50px;
   width: 100%;
-  background-color: aqua;
+  background-color: #beb0ff;
   display: flex;
   align-items: center;
   position: sticky;
@@ -65,7 +65,6 @@
 }
 .topbarLink {
   display: flex;
-
 }
 
 .topbarIcons {
@@ -122,56 +121,63 @@
   margin: 3px 3px;
 }
 .menu-sidebar {
-  position: relative;
-  top: 100px;
-  left: 0px;
-  width: 39%;
-  border-radius: 12%;
+  position: absolute;
+  top: 50px;
+  /* left: 0px; */
+  /* width: 150px; */
+  border-radius: 5px;
   display: flex;
-  background-color: gray;
-  padding: 15px 30px 25px 30px;
-  z-index: 99
+  background-color: white;
+  padding: 20px 20px 20px 20px;
+  z-index: 99;
+  border: 1px solid;
 }
-.lg{
-  border-radius: 40px;
+.menu-sidebar ul{
+  padding: 0px
+}
+.lg, jk {
+  border-radius: 5px;
   cursor: pointer;
-
+  padding: 8px 20px;
 }
-.lg:hover{
- background-color: blue;
-}
-.jk{
-  border-radius: 40px;
-  cursor: pointer;
-
-}
-.jk:hover{
- background-color: blue;
+.lg:hover, .jk:hover {
+  background-color: rgb(166, 166, 255);
 }
 
 /* serachbar css */
-.searchspace{
-  /* display: none; */
-
-  width: 200px;
-    margin: auto;
-    position: relative;
-    top: 40px;
-    display: flex;
-    background: white;
-    padding: 8px;
+.containerSearchSpace{
+  width: 100% !important;
+  position: fixed;
+  top: 50px;
 }
-.searchuserProfile{
+.searchspace {
+  /* display: none; */
+  width: 350px;
+  margin: auto;
+  /* position: fixed;
+  top: 40px; */
+  display: flex;
+  justify-content: center;
+  background: white;
+  padding: 8px;
+  margin: auto;
+  border: 1px solid rgb(105, 105, 105);
+  border-radius: 5px;
+  gap: 40px;
+  align-items: center;
+}
+.searchuserProfile {
   width: 40px;
   height: 40px;
 }
-.nav-item{
-  list-style: none
+.nav-item {
+  list-style: none;
+  margin: 5px 0px;
 }
 /* button:focus{
   outline: none;
 } */
-.btn{
+.btn {
   background: none;
   color: inherit;
   border: none;
@@ -181,16 +187,18 @@
   outline: inherit;
 }
 
-
 @media only screen and (max-width: 896px) {
   .topbarIcons {
     display: none;
   }
   .topbarContainer {
     z-index: 100;
-    width: 128%;
+    /* width: 128%; */
   }
   .topbarIconIteam {
+    display: none;
+  }
+  .topbarLinks{
     display: none;
   }
   /* .topbarContainer{
@@ -205,7 +213,7 @@
     display: block;
   } */
   .burger {
-    display: block!important;
+    display: block !important;
     float: right;
     background-color: #080808;
     color: #fff;
@@ -219,21 +227,19 @@
     right: 60px;
     top: 0px;
   }
-  .topbarLink{
+  .topbarLink {
     display: flex;
     flex-direction: row;
     position: fixed;
     top: 10px;
     width: 35px !important;
     height: 35px !important;
-
   }
 
-  .topbarImg{
+  .topbarImg {
     position: fixed;
     right: 10px;
     top: 10px;
-
   }
 
   .logo {
@@ -245,23 +251,16 @@
     color: rgb(0, 0, 0);
     cursor: pointer;
   }
-  .Hm{
+  .Hm {
     margin-left: 30px;
     right: 110px;
     /* padding: 15px; */
     /* font-size: 90px; */
   }
-  .Tl{
+  .Tl {
     right: 160px;
-
   }
-  .topbarCenter {
-    position: fixed;
-    margin-left: 90px;
-    padding-right: 0px;
-
-  }
-  .lg{
+  .lg {
     display: none;
   }
   /* .menu-sidebar{

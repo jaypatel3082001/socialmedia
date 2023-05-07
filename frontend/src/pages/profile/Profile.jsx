@@ -8,7 +8,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import Footer from "../../components/footer/Footer"
 
-export default function Profile() {
+export default function Profile(userdata) {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
   const [user, setUser] = useState({});
   const username = useParams().username;
@@ -20,13 +20,11 @@ export default function Profile() {
     setOtherSidebaropen(!otherSidebaropen)
 
 
-    console.log("other status", otherSidebaropen);
   };
   const toggleOnlineFriends = () => {
     setOtherSidebaropen(false)
     setFriendSidebarOpen(!friendSidebaropen)
 
-    console.log("Friend status", friendSidebaropen);
   };
 
   const toggleLogout = () => {
@@ -41,7 +39,7 @@ export default function Profile() {
     };
     fetchUser();
   }, [username]);
-
+  const curruntuser = localStorage.getItem("email")
   return (
     <>
       <Topbar toggleOnlineFriends={toggleOnlineFriends} toggleOtheroption={toggleOtheroption} toggleLogout={toggleLogout}/>
@@ -75,7 +73,7 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username={username} />
+            {username == userdata?.user?.username && <Feed username={username} />}
             <Rightbar user={user} friendSidebaropen={friendSidebaropen}/>
           </div>
         </div>
