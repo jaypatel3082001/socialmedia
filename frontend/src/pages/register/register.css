@@ -72,7 +72,7 @@
 
 .loginRegisterButton{
     width: 60%;
-    align-self: center;
+    margin-left: 23%;
     height: 50px;
     border-radius: 10px;
     border: none;

@@ -1,37 +1,42 @@
 import React, { useState } from 'react'
-// import {Person} from "@material-ui/icons"
-import  Topbar  from "../../components/topbar/Topbar";
+import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import Footer from "../../components/footer/Footer"
 import "./home.css"
-import Footer from '../../components/footer/Footer';
 
-function Home() {
+export default function Home() {
   const [friendSidebaropen, setFriendSidebarOpen] = useState(false);
   const [otherSidebaropen, setOtherSidebaropen] = useState(false);
 
-  const toggleOnlineFriends = () => {
-    setOtherSidebaropen(true)
-    setFriendSidebarOpen(!friendSidebaropen);
-    console.log("Friend status", friendSidebaropen);
-  };
   const toggleOtheroption = () => {
     setFriendSidebarOpen(false)
-    setOtherSidebaropen(!otherSidebaropen);
+    setOtherSidebaropen(!otherSidebaropen)
+
+
     console.log("other status", otherSidebaropen);
   };
-  return( <>
-  <Topbar toggleOnlineFriends={toggleOnlineFriends} toggleOtheroption={toggleOtheroption}/>
-  <div className="homeContainer">
-    <Sidebar otherSidebaropen={otherSidebaropen}/>
-    <Feed />
-    <Rightbar friendSidebaropen={friendSidebaropen}/>
-    <Footer />
-  </div>
+  const toggleOnlineFriends = () => {
+    setOtherSidebaropen(false)
+    setFriendSidebarOpen(!friendSidebaropen)
 
-</>
+    console.log("Friend status", friendSidebaropen);
+  };
+
+  const toggleLogout = () => {
+    localStorage.clear();
+    window.location.href = '/';
+  };
+  return (
+    <>
+      <Topbar toggleOnlineFriends={toggleOnlineFriends} toggleOtheroption={toggleOtheroption} toggleLogout={toggleLogout}/>
+      <div className="homeContainer">
+        <Sidebar otherSidebaropen={otherSidebaropen}/>
+        <Feed/>
+        <Rightbar friendSidebaropen={friendSidebaropen} />
+        <Footer/>
+      </div>
+    </>
   );
 }
-
-export default Home;

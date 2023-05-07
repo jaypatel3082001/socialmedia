@@ -1,20 +1,19 @@
 import "./sidebar.css";
 import {
   RssFeed,
-  // Chat,
+  Chat,
   PlayCircleFilledOutlined,
   Group,
   Bookmark,
   HelpOutline,
   WorkOutline,
-  // Event,
-  // School,
+  Event,
+  School,
 } from "@mui/icons-material";
 import { Users } from "../../dummyData";
 import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function Sidebar({otherSidebaropen}) {
-
   return (
     <div className="sidebar" style={{display : otherSidebaropen && "block", position : otherSidebaropen && "absolute", backgroundColor:"white"}}>
       <div className="sidebarWrapper">
@@ -23,10 +22,10 @@ export default function Sidebar({otherSidebaropen}) {
             <RssFeed className="sidebarIcon" />
             <span className="sidebarListItemText">Feed</span>
           </li>
-          {/* <li className="sidebarListItem">
+          <li className="sidebarListItem">
             <Chat className="sidebarIcon" />
             <span className="sidebarListItemText">Chats</span>
-          </li> */}
+          </li>
           <li className="sidebarListItem">
             <PlayCircleFilledOutlined className="sidebarIcon" />
             <span className="sidebarListItemText">Videos</span>
@@ -39,25 +38,24 @@ export default function Sidebar({otherSidebaropen}) {
             <Bookmark className="sidebarIcon" />
             <span className="sidebarListItemText">Bookmarks</span>
           </li>
-
+          <li className="sidebarListItem">
+            <HelpOutline className="sidebarIcon" />
+            <span className="sidebarListItemText">Questions</span>
+          </li>
           <li className="sidebarListItem">
             <WorkOutline className="sidebarIcon" />
             <span className="sidebarListItemText">Jobs</span>
           </li>
           <li className="sidebarListItem">
-            <HelpOutline className="sidebarIcon" />
-            <span className="sidebarListItemText">helps</span>
-          </li>
-          {/* <li className="sidebarListItem">
             <Event className="sidebarIcon" />
             <span className="sidebarListItemText">Events</span>
           </li>
           <li className="sidebarListItem">
             <School className="sidebarIcon" />
             <span className="sidebarListItemText">Courses</span>
-          </li> */}
+          </li>
         </ul>
-        {/* <button className="sidebarButton">Show More</button> */}
+        <button className="sidebarButton">Show More</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
           {Users.map((u) => (

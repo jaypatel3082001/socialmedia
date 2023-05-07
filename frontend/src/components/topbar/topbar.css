@@ -1,7 +1,7 @@
 .topbarContainer {
   height: 50px;
   width: 100%;
-  background-color: #1877f2;
+  background-color: aqua;
   display: flex;
   align-items: center;
   position: sticky;
@@ -17,7 +17,7 @@
   font-size: 24px;
   margin-left: 20px;
   font-weight: bold;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 
@@ -53,14 +53,19 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .topbarLink {
   margin-right: 10px;
   font-size: 14px;
   cursor: pointer;
+  color: black;
+  /* display: flex; */
+}
+.topbarLink {
   display: flex;
+
 }
 
 .topbarIcons {
@@ -95,14 +100,14 @@
   object-fit: cover;
   cursor: pointer;
 }
-.hm {
-  /* margin: 4%; */
+/* .hm {
+  margin: 4%;
   margin-right: 23%;
 }
 .tl {
   margin-right: 0%;
   margin-left: 26%;
-}
+} */
 .burger {
   position: absolute;
   right: 10%;
@@ -111,19 +116,71 @@
   display: none;
 }
 .line {
-  width: 33px;
-  background: rgb(0, 0, 0);
+  width: 20px;
+  background: rgb(255, 255, 255);
   height: 4px;
   margin: 3px 3px;
 }
 .menu-sidebar {
   position: relative;
-  top: 56px;
+  top: 100px;
+  left: 0px;
+  width: 39%;
+  border-radius: 12%;
   display: flex;
   background-color: gray;
   padding: 15px 30px 25px 30px;
   z-index: 99
 }
+.lg{
+  border-radius: 40px;
+  cursor: pointer;
+
+}
+.lg:hover{
+ background-color: blue;
+}
+.jk{
+  border-radius: 40px;
+  cursor: pointer;
+
+}
+.jk:hover{
+ background-color: blue;
+}
+
+/* serachbar css */
+.searchspace{
+  /* display: none; */
+
+  width: 200px;
+    margin: auto;
+    position: relative;
+    top: 40px;
+    display: flex;
+    background: white;
+    padding: 8px;
+}
+.searchuserProfile{
+  width: 40px;
+  height: 40px;
+}
+.nav-item{
+  list-style: none
+}
+/* button:focus{
+  outline: none;
+} */
+.btn{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
 
 @media only screen and (max-width: 896px) {
   .topbarIcons {
@@ -131,7 +188,7 @@
   }
   .topbarContainer {
     z-index: 100;
-    width: 100%;
+    width: 128%;
   }
   .topbarIconIteam {
     display: none;
@@ -139,29 +196,86 @@
   /* .topbarContainer{
         width: 220vw;
     } */
-  .burger {
-    position: absolute;
-    right: 10%;
+  /* .burger {
+
+    position: fixed;
+    right: 60px;
     top: 15px;
     cursor: pointer;
     display: block;
+  } */
+  .burger {
+    display: block!important;
+    float: right;
+    background-color: #080808;
+    color: #fff;
+    padding: 4px 7px;
+    border-radius: 5px;
+    margin: 9px auto 0;
+    cursor: pointer;
+    /* position: relative;
+    z-index: 10037; */
+    position: fixed;
+    right: 60px;
+    top: 0px;
   }
-  .hm {
-    position: absolute;
-    right: 4.5%;
+  .topbarLink{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 10px;
+    width: 35px !important;
+    height: 35px !important;
+
   }
-  .tl {
-    /* right: 10%; */
-    /* margin-left: 25%; */
-    position: relative;
-    right: 170%;
+
+  .topbarImg{
+    position: fixed;
+    right: 10px;
+    top: 10px;
+
   }
 
   .logo {
     font-size: 15px;
     margin-left: 10px;
+    margin-top: -9px;
+    position: fixed;
     font-weight: bold;
     color: rgb(0, 0, 0);
     cursor: pointer;
   }
+  .Hm{
+    margin-left: 30px;
+    right: 110px;
+    /* padding: 15px; */
+    /* font-size: 90px; */
+  }
+  .Tl{
+    right: 160px;
+
+  }
+  .topbarCenter {
+    position: fixed;
+    margin-left: 90px;
+    padding-right: 0px;
+
+  }
+  .lg{
+    display: none;
+  }
+  /* .menu-sidebar{
+    display: grid;
+    position: absolute;
+    background: #404040;
+    width: 100%;
+    top: 200px;
+    left: 0;
+    transform: translateY(-100%);
+    z-index: -1;
+    transition: .6s;
+  } */
+  /* .menu-sidebar .nav-item {
+    padding-left: 35px;
+  } */
 }

@@ -128,24 +128,5 @@ router.put("/:id/unfollow", async(req,res)=>{
     }
 })
 router.route('/user/findOne/:name').get(userController.findOneUserController);
-//get user using name
-// router.get("/", async (req,res)=>{
-//     const username = req.query.username
-//     try{
-//       const user  = await User.findOne({username:username})
-    //   const friends = await Promise.all(
-    //     user.followings.map(friendId=>{
-    //         return User.findById(user)
-    //     })
-    // )
-    // let userList = [];
-    // user.map(user=>{
-    //     const {_id, username, profilePicture} = user
-    //     userList.push({_id, username, profilePicture})
-    // })
-    // }catch(err){
-
-    // }
-// })
 
 module.exports = router

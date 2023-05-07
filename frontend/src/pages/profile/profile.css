@@ -48,20 +48,49 @@
 .profileRightBottom{
     display: flex;
 }
+@media only screen and (max-width: 893px){
+    .profileCover{
+        width: 128%;
+    }
 
-@media only screen and (max-width: 1043px){
+    /* .profileCover{
+     width: 200%;
+    } */
+    /* .profileInfo{
+     /* position: relative; */
+     /* left: 45%; */
 
-           /* .profileCover{
-            width: 200%;
-           } */
-           /* .profileInfo{
-            /* position: relative; */
-            /* left: 45%; */
+    /* } */
+    /* .tpc{
+        position: fixed;
+    } */
+    /* .tp{
+        position: fixed;
+        height: 50px;
+        width: 100%;
+        background-color: aqua;
+        display: flex;
+        align-items: center;
+        /* position: sticky; */
+        /* top: 0;
+        z-index: 999; */
 
-           /* } */
-           .profileRightTop{
-            width: 180%;
-           }
+    /* } */ */
+    .profileRightTop{
+     width: 180%;
+    }
+    .sidebar{
+        display: none;
+    }
+    .profileCover{
+        z-index: -100;
+    }
+    .profileInfo{
+        margin-left: 29%;
+    }
+    /* .Rb{
+        border-radius: 10% !important;
+    } */
 
 
 }
