@@ -16,13 +16,12 @@ export default function Rightbar({ user, friendSidebaropen  }) {
   //   setFollowed(currentUser.followings.includes(user?.id))
   // },[currentUser, user?.id]);
 
-  console.log("tari id",user)
   useEffect(() => {
     const getFriends = async () => {
 
       try {
-
-        const friendList = await axios.get("/users/friends/" + user._id);
+        
+        const friendList = await axios.get("/users/friends/" + currentUser._id);
         setFriends(friendList.data);
       } catch (err) {
 
@@ -95,10 +94,11 @@ export default function Rightbar({ user, friendSidebaropen  }) {
         </div>
         <h4 className="rightbarTitle">User friends</h4>
         <div className="rightbarFollowings">
-          {friends.map((friend) => (
+          {friends.map((friend,index) => (
             <Link
               to={"/profile/" + friend.username}
               style={{ textDecoration: "none" }}
+              key={index}
             >
               <div className="rightbarFollowing">
                 <img
@@ -119,10 +119,12 @@ export default function Rightbar({ user, friendSidebaropen  }) {
     );
   };
   return (
+    <>
     <div className="rightbar" style={{display: friendSidebaropen && "block" }}>
       <div className="rightbarWrapper">
         {user ? <ProfileRightbar /> : <HomeRightbar />}
       </div>
     </div>
+    </>
   );
 }

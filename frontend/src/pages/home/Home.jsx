@@ -15,13 +15,11 @@ export default function Home() {
     setOtherSidebaropen(!otherSidebaropen)
 
 
-    console.log("other status", otherSidebaropen);
   };
   const toggleOnlineFriends = () => {
     setOtherSidebaropen(false)
     setFriendSidebarOpen(!friendSidebaropen)
 
-    console.log("Friend status", friendSidebaropen);
   };
 
   const toggleLogout = () => {

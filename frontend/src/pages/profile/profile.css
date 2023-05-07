@@ -49,9 +49,6 @@
     display: flex;
 }
 @media only screen and (max-width: 893px){
-    .profileCover{
-        width: 128%;
-    }
 
     /* .profileCover{
      width: 200%;
@@ -68,7 +65,7 @@
         position: fixed;
         height: 50px;
         width: 100%;
-        background-color: aqua;
+        background-color: #beb0ff;
         display: flex;
         align-items: center;
         /* position: sticky; */
@@ -85,9 +82,9 @@
     .profileCover{
         z-index: -100;
     }
-    .profileInfo{
-        margin-left: 29%;
-    }
+        /* .profileInfo{
+            margin-left: 29%;
+        } */
     /* .Rb{
         border-radius: 10% !important;
     } */
