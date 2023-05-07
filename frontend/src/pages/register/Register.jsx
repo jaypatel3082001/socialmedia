@@ -46,12 +46,15 @@ export default function Register() {
               placeholder="Username"
               ref={username}
               className="loginInput"
+              required
             />
             <input
               placeholder="Email"
               ref={email}
               className="loginInput"
               type="email"
+              required
+
             />
             <input
               placeholder="Password"
@@ -59,12 +62,16 @@ export default function Register() {
               className="loginInput"
               type="password"
               minLength="6"
+              required
+
             />
             <input
               placeholder="Password Again"
               ref={passwordAgain}
               className="loginInput"
               type="password"
+              required
+
             />
             <button className="loginButton" type="submit">
               Sign Up
